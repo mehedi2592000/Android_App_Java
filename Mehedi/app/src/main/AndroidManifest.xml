@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Mehedi"
         tools:targetApi="31">
         <activity
-            android:name=".Stop_ALam"
+            android:name=".StartAlarm"
             android:exported="false" />
         <activity
             android:name=".openSchedul"

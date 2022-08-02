@@ -8,20 +8,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
 import java.util.Calendar;
 
 public class openSchedul extends AppCompatActivity {
-
+    static final int ALARM_REQ_CODE=100;
     TimePicker timePicker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_schedul);
         timePicker = (TimePicker) findViewById(R.id.timePicker);
-
+        AlarmManager alarmManager=(AlarmManager) getSystemService(ALARM_SERVICE);
         //attaching clicklistener on button
         findViewById(R.id.buttonAlarm).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,22 +39,23 @@ public class openSchedul extends AppCompatActivity {
                 }
 
 
-                setAlarm(calendar.getTimeInMillis());
+                int time=Integer.parseInt(((EditText)(findViewById(R.id.edit_text_input))).getText().toString());
+                long triggerTime=System.currentTimeMillis()+(time*1000);
+                Intent iBroadCast=new Intent(openSchedul.this,MyAlarm.class);
+                PendingIntent pi=PendingIntent.getBroadcast(openSchedul.this,ALARM_REQ_CODE,iBroadCast,PendingIntent.FLAG_UPDATE_CURRENT);
+                alarmManager.set(AlarmManager.RTC_WAKEUP,triggerTime,pi);
+               Toast.makeText(openSchedul.this,"your Alarm is set",Toast.LENGTH_SHORT).show();
+                StartAlarm();
+
+
+              //  setAlarm(calendar.getTimeInMillis());
             }
         });
     }
-    private void setAlarm(long time) {
-        //getting the alarm manager
-        AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 
-        //creating a new intent specifying the broadcast receiver
-        Intent i = new Intent(this, MyAlarm.class);
-
-        //creating a pending intent using the intent
-        PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
-
-        //setting the repeating alarm that will be fired every day
-        am.setRepeating(AlarmManager.RTC, time, AlarmManager.INTERVAL_DAY, pi);
-        Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show();
+    public void StartAlarm(){
+        Intent intent=new Intent(this,StartAlarm.class);
+        startActivity(intent);
     }
+
 }

@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/drawable/circle.xml" value="0.2435" />
+        <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/layout/activity_open_schedul.xml" value="0.11302083333333333" />
         <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/layout/activity_openset_alam.xml" value="0.25" />
+        <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/layout/activity_start_alarm.xml" value="0.2" />
         <entry key="..\:/Users/mrinm/AndroidStudioProjects/Mehedi/app/src/main/res/layout/activity_stop_alam.xml" value="0.1160081053698075" />
       </map>
     </option>
@@ -15,5 +17,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.25416666666666665" />
+      </ProjectState>
+    </option>
   </component>
 </project>

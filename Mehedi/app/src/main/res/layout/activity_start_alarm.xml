@@ -4,34 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".StartAlarm">
 
+    <TextView
 
-
-    <Button
-        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set Alam"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:background="@drawable/circle"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
 
-
     <Button
-        android:id="@+id/botton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sedual alam"
-
-        android:layout_centerHorizontal="true"/>
-
-    <Button
-        android:id="@+id/bottonn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="alam"
-
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="Cancle alarm"
+        android:textColor="#ffffff" />
 
 
 </RelativeLayout>
